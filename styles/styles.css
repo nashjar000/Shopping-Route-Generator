@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0; /* Remove the padding from body to fill the entire page */
+    background-color: #f0f0f0; /* Set a background color for the entire page */
+}
+
+header {
+    background-color: #0171DC;
+    color: white;
+    padding: 10px 0; /* Add vertical padding to the header */
+    text-align: center; /* Center the content within the header */
+}
+
+header img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+    margin-right: 10px; /* Add some spacing between the image and the title */
+}
+
+h1 {
+    margin: 0;
+    display: inline;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 20px;
+    text-align: center; /* Center the form within the content area */
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    padding: 5px;
+    margin: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #FFC11F;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(207, 152, 11);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+#generateRouteButtonContainer {
+    text-align: center; /* Center the content horizontally */
+    margin-top: 20px; /* Add some space between the route list and the button */
+}
+
+#generateRouteButton {
+    padding: 10px 20px;
+    background-color: #FFC11F;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+#generateRouteButton:hover {
+    background-color: rgb(207, 152, 11);
+}
+
+@media (max-width: 480px) {
+    /* Apply mobile styles for screens up to 480px wide */
+    header img {
+        width: 60px; /* Adjust the image size for smaller screens */
+    }
+    
+    h1 {
+        font-size: 1.5em; /* Increase the font size for mobile view */
+    }
+    
+    form {
+        margin-bottom: 10px; /* Reduce margin for smaller screens */
+    }
+    
+    input, button {
+        padding: 8px; /* Adjust padding for smaller buttons and inputs */
+    }
+}

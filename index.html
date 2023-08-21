@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grocery Shopping Route</title>
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+    <link rel="icon" href="./images/walmartLogo.svg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <img src="./images/walmartLogo.svg" alt="">
+        <h1>Grocery Shopping Route Generator</h1>
+    </header>
+    <form id="groceryForm">
+        <label for="product">Product: </label>
+        <input type="text" id="product" name="product" required>
+        <label for="aisle">Aisle: </label>
+        <input type="text" id="aisle" name="aisle" required>
+        <button type="button" id="addButton">Add Item</button>
+    </form>
+    <h2>Shopping Route:</h2>
+    <ul id="routeList"></ul>
+    <div id="generateRouteButtonContainer">
+        <button type="button" id="generateRouteButton">Generate Route</button>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
