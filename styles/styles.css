@@ -133,6 +133,18 @@ li {
     color: white;
 }
 
+footer{
+    background-color: #0171DC;
+    color: white;
+    padding: 10px 0; 
+    text-align: auto;
+    margin-top: 100px;
+}
+
+footer p{
+    font-size: 25px;
+}
+
 /* Mobile Devices */
 
 /* Styles for screens up to 480px wide (typical mobile screens) */
