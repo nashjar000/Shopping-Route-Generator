@@ -31,3 +31,31 @@ function generateRoute() {
     sortedList.push({ item: "Checkout", aisle: "Checkout" });
     updateRouteList();
 }
+
+document.getElementById("clearRouteButton").addEventListener("click", clearRoute);
+
+function clearRoute() {
+    groceryList.length = 0;
+    updateRouteList();
+}
+
+document.getElementById("sendSMSButton").addEventListener("click", sendSMS);
+
+function sendSMS() {
+    const phoneNumber = prompt("Enter the phone number to send the shopping route to:");
+    if (phoneNumber) {
+        const routeText = generateRouteText(); // Generate the route text
+        const smsLink = `sms:${phoneNumber}?body=${encodeURIComponent(routeText)}`;
+        window.location.href = smsLink;
+    }
+}
+
+function generateRouteText() {
+    let routeText = "Shopping Route:\n";
+    groceryList.forEach((item, index) => {
+        routeText += `${index + 1}. ${item.aisle} - ${item.item}\n`;
+    });
+    routeText += "Checkout. Thank you for shopping! :)";
+    return routeText;
+}
+

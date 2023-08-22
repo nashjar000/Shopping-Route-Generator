@@ -79,21 +79,101 @@ li {
     background-color: rgb(207, 152, 11);
 }
 
-@media (max-width: 480px) {
-    /* Apply mobile styles for screens up to 480px wide */
+#routeButtons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#clearRouteButton {
+    padding: 10px 20px;
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px; /* Add spacing between buttons */
+}
+
+#clearRouteButton:hover {
+    background-color: #C0392B;
+}
+
+#routeList {
+    text-align: center; /* Center the route list content */
+}
+
+#routeButtons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#sendSMSContainer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#sendSMSButton {
+    padding: 10px 20px;
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#sendSMSButton:hover {
+    background-color: #2980B9;
+}
+
+/* Mobile Devices */
+
+/* Styles for screens up to 480px wide (typical mobile screens) */
+
+@media (min-width: 480px) {
+
     header img {
-        width: 60px; /* Adjust the image size for smaller screens */
+        width: 250px;
     }
-    
+
     h1 {
-        font-size: 1.5em; /* Increase the font size for mobile view */
+        font-size: 3em;
     }
-    
+
     form {
-        margin-bottom: 10px; /* Reduce margin for smaller screens */
+        margin-bottom: 10px;
     }
-    
+
     input, button {
-        padding: 8px; /* Adjust padding for smaller buttons and inputs */
+        padding: 8px;
+        font-size: 50px;
+        margin: 5px auto; /* Center the elements horizontally */
+        display: block; /* Display the elements as blocks */
+    }
+
+    h1, h2 {
+        font-size: 70px; /* Adjust the font size for h2 */
+    }
+
+    label{
+        font-size: 3em;
+    }
+
+    #clearRouteButton {
+        padding: 8px 10px; /* Adjust padding for mobile */
+        font-size: 3em; /* Adjust font size for mobile */
+        margin-left: 40%;
+        margin-top: 60px;
+    }
+
+    #sendSMSButton{
+        margin-top: 60px;
+    }
+
+    ul{
+        font-size: 40px;
+        background-color: gray;
+        color: white;
+        margin-left: 150px;
+        margin-right: 150px;
     }
 }
+
+/* Styles for larger screens (greater than 480px) */
