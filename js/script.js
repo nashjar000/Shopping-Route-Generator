@@ -78,3 +78,24 @@ function sharePage() {
         console.log("Web Share API not supported on this device.");
     }
 }
+
+document.getElementById("shareRouteButton").addEventListener("click", shareRoute);
+
+function shareRoute() {
+    const routeText = generateRouteText(); // Generate the route text
+    if (navigator.share) {
+        navigator.share({
+            title: "Shopping Route",
+            text: routeText,
+        })
+        .then(() => {
+            console.log("Route shared successfully.");
+        })
+        .catch((error) => {
+            console.error("Error sharing route:", error);
+        });
+    } else {
+        copyToClipboard(routeText);
+        console.log("Route copied to clipboard:", routeText);
+    }
+}
