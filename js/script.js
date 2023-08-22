@@ -39,14 +39,24 @@ function clearRoute() {
     updateRouteList();
 }
 
-document.getElementById("sendSMSButton").addEventListener("click", sendSMS);
+document.getElementById("shareRouteButton").addEventListener("click", shareRoute);
 
-function sendSMS() {
-    const phoneNumber = prompt("Enter the phone number to send the shopping route to:");
-    if (phoneNumber) {
-        const routeText = generateRouteText(); // Generate the route text
-        const smsLink = `sms:${phoneNumber}&body=${encodeURIComponent(routeText)}`;
-        window.location.href = smsLink;
+function shareRoute() {
+    const routeText = generateRouteText(); // Generate the route text
+    if (navigator.share) {
+        navigator.share({
+            title: "Shopping Route",
+            text: routeText,
+        })
+        .then(() => {
+            console.log("Route shared successfully.");
+        })
+        .catch((error) => {
+            console.error("Error sharing route:", error);
+        });
+    } else {
+        copyToClipboard(routeText);
+        console.log("Route copied to clipboard:", routeText);
     }
 }
 
@@ -76,26 +86,5 @@ function sharePage() {
         });
     } else {
         console.log("Web Share API not supported on this device.");
-    }
-}
-
-document.getElementById("shareRouteButton").addEventListener("click", shareRoute);
-
-function shareRoute() {
-    const routeText = generateRouteText(); // Generate the route text
-    if (navigator.share) {
-        navigator.share({
-            title: "Shopping Route",
-            text: routeText,
-        })
-        .then(() => {
-            console.log("Route shared successfully.");
-        })
-        .catch((error) => {
-            console.error("Error sharing route:", error);
-        });
-    } else {
-        copyToClipboard(routeText);
-        console.log("Route copied to clipboard:", routeText);
     }
 }
