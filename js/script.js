@@ -83,8 +83,20 @@ document.getElementById("shareRouteButton").addEventListener("click", shareRoute
 
 function shareRoute() {
     const routeText = generateRouteText(); // Generate the route text
-    copyToClipboard(routeText);
-    alert("Route copied to clipboard. You can now paste it to share.");
+    if (navigator.share) {
+        navigator.share({
+            text: routeText,
+            title: "Shopping Route",
+        })
+        .then(() => {
+            console.log("Route shared successfully.");
+        })
+        .catch((error) => {
+            console.error("Error sharing route:", error);
+        });
+    } else {
+        alert("Sharing is not supported on this browser/device.");
+    }
 }
 
 function copyToClipboard(text) {
