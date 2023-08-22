@@ -78,35 +78,3 @@ function sharePage() {
         console.log("Web Share API not supported on this device.");
     }
 }
-
-document.getElementById("shareRouteButton").addEventListener("click", shareRoute);
-
-function shareRoute() {
-    const routeText = generateRouteText(); // Generate the route text
-    if (navigator.share) {
-        navigator.share({
-            text: routeText,
-            title: "Shopping Route",
-        })
-        .then(() => {
-            console.log("Route shared successfully.");
-        })
-        .catch((error) => {
-            console.error("Error sharing route:", error);
-        });
-    } else {
-        alert("Sharing is not supported on this browser/device.");
-    }
-}
-
-function copyToClipboard(text) {
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
-}
-
-
-
