@@ -128,6 +128,11 @@ li {
     color: white;
 }
 
+#shareRouteButton{
+    background-color: #3498DB;
+    color: white;
+}
+
 /* Mobile Devices */
 
 /* Styles for screens up to 480px wide (typical mobile screens) */
